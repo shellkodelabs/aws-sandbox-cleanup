@@ -64,24 +64,24 @@ def delete_unused_user(msg):
           key_last_days = None
        
         if pass_last_days == None and key_last_days == None:
-          msg = msg + f"Username: {user.name}, Days_launched: {create_date}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n"
+          msg = msg + f"Username: {user.name}, Days_launched: {created_days}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n"
           if created_days > 7:
             delete_user(user.name,access_key_id)
         elif  pass_last_days == None and key_last_days != None:
-          msg = msg + f"Username: {user.name}, Days_launched: {create_date}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n" 
+          msg = msg + f"Username: {user.name}, Days_launched: {created_days}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n" 
           if key_last_days > 7:
             delete_user(user.name,access_key_id)
         elif  pass_last_days != None and key_last_days == None:
-          msg = msg + f"Username: {user.name}, Days_launched: {create_date}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n" 
+          msg = msg + f"Username: {user.name}, Days_launched: {created_days}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n" 
           if pass_last_days > 7:
             delete_user(user.name,access_key_id)
         else:
-          msg = msg + f"Username: {user.name}, Days_launched: {create_date}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n" 
+          msg = msg + f"Username: {user.name}, Days_launched: {created_days}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n" 
           if pass_last_days > 7 and key_last_days > 7:
               delete_user(user.name,access_key_id)
       else:
         # Having only Console access
-        msg = msg + f"Username: {user.name}, Days_launched: {create_date}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n"
+        msg = msg + f"Username: {user.name}, Days_launched: {created_days}, AccessKey_Unused_days: {key_last_days}, Password_Unused_Days: {pass_last_days} \n"
         if pass_last_days == None:
           if created_days > 7:
             delete_user(user.name,access_key_id=None)
